@@ -648,7 +648,7 @@ nav.navbar {
   z-index: 0;
 }
 
-.services-section > .container {
+.services-section>.container {
   position: relative;
   z-index: 1;
 }
@@ -727,12 +727,29 @@ nav.navbar {
 }
 
 /* Optional per-card accent color (subtle) */
-.service-card-skin .service-icon-wrap { --service-tint: rgba(232, 180, 180, 0.25); }
-.service-card-hair .service-icon-wrap { --service-tint: rgba(122, 158, 126, 0.2); }
-.service-card-gut .service-icon-wrap { --service-tint: rgba(196, 151, 42, 0.2); }
-.service-card-diabetes .service-icon-wrap { --service-tint: rgba(122, 158, 126, 0.2); }
-.service-card-weight-loss .service-icon-wrap { --service-tint: rgba(122, 158, 126, 0.2); }
-.service-card-weight-gain .service-icon-wrap { --service-tint: rgba(196, 151, 42, 0.2); }
+.service-card-skin .service-icon-wrap {
+  --service-tint: rgba(232, 180, 180, 0.25);
+}
+
+.service-card-hair .service-icon-wrap {
+  --service-tint: rgba(122, 158, 126, 0.2);
+}
+
+.service-card-gut .service-icon-wrap {
+  --service-tint: rgba(196, 151, 42, 0.2);
+}
+
+.service-card-diabetes .service-icon-wrap {
+  --service-tint: rgba(122, 158, 126, 0.2);
+}
+
+.service-card-weight-loss .service-icon-wrap {
+  --service-tint: rgba(122, 158, 126, 0.2);
+}
+
+.service-card-weight-gain .service-icon-wrap {
+  --service-tint: rgba(196, 151, 42, 0.2);
+}
 
 .service-icon-wrap {
   width: 64px;
@@ -815,8 +832,7 @@ nav.navbar {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%;
-  max-width: 320px;
+  width: clamp(150px, 25vw, 190px);
   pointer-events: none;
   z-index: 0;
   display: flex;
@@ -824,9 +840,9 @@ nav.navbar {
 }
 
 .approach-shape img {
-  width: 50%;
+  width: 100%;
   height: auto;
-  max-height: 85%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -842,17 +858,45 @@ nav.navbar {
   animation: approachRotate 20s linear infinite;
 }
 
+/* Make approach shapes lighter / smaller on smaller screens */
+@media (max-width: 992px) {
+  .approach-shape {
+    width: clamp(160px, 40vw, 260px);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 576px) {
+  .approach-shape {
+    top: 25%;
+    width: 35vw;
+    opacity: 0.35;
+  }
+}
+
 @keyframes approachFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-50px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
 }
 
 @keyframes approachRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.approach-section > .container {
+.approach-section>.container {
   position: relative;
   z-index: 1;
 }
