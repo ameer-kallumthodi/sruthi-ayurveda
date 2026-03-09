@@ -1032,7 +1032,7 @@ nav.navbar {
 .booking-team-icon {
   max-width: 100%;
   width: 100%;
-  max-height: 280px;
+  max-height: 450px;
   object-fit: contain;
   object-position: left center;
   filter: drop-shadow(0 10px 30px rgba(45, 90, 61, 0.12));
